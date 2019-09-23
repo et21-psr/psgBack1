@@ -1,0 +1,39 @@
+<html>
+    <script>
+        
+$.ajax ({ 
+url: 'localhost:3030/usuario',
+type: 'Get',
+beforeSend: function (response) {
+    console.log(response); 
+    response.forEach(function(usuario){
+        html="<tr class=''>"
+                +"<td>"
+                +usuario.id_usuario
+                +"</td>"
+                +"<td>"
+                +usuario.mail
+                +"</td>"
+                +"<td>"
+                +usuario.contraseña
+                +"</td>"
+                +"<td>"
+                +usuario.id_equipo
+                +"</td>" 
+                +"<td>"
+                +usuario.administrador
+                +"</td>"
+                +"<td>"
+                +usuario.rango
+                +"</td>"                   
+
+
+            });
+} 
+})
+
+
+
+
+</script>
+</html>

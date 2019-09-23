@@ -1,0 +1,118 @@
+   <html>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <head>
+            <h1 align="center"><FONT FACE="times new roman" SIZE=6 COLOR="yellow">Formulario jugadores</h1></FONT>
+            <hr />
+            <br> </br>
+            </head>
+        <body background= "fondo2.jpg">
+                    <form id="formulario">
+                         
+                        <div>
+                            <p style="color:#FFED11";>
+                            <label for="nombre_completo">Nombre jugador:</label>
+                            <input type="text" id="id" />
+                            
+                        </div>
+                        <br> </br>
+                        <div>
+                             <p style="color:#FFED11";>
+                            <label for="dorsal">Dorsal:</label>
+                            <input type="text" id="id" />
+                        </div>
+                        <br> </br> </p>
+                        <div class="button">
+                                <p style="color:#FFED11";>
+                            <button class="btn btn-success" type="submit">Guardar Datos</button>
+                        </p>
+                        </div>
+                    
+                    </form>
+        </body>
+    </html>
+    <script>
+            // Attach a submit handler to the form
+            $( "#formulario" ).submit(function( event ) {
+             console.log("Entro");
+              // Stop form from submitting normally
+              event.preventDefault();
+             
+              $.post( "http://localhost:3030/equipo", { 
+                  director_tecnico: $("#director_tecnico").val(),
+                   nombre: $("#nombre").val(),
+                   function() {
+                       alert( "Guardado Correctamente" ); }
+                   }
+                    );
+            });
+    
+            $.get( "http://localhost:3030/equipo", {
+                director_tecnico: $("#director_tecnico").val(),
+                   nombre: $("#nombre").val(),
+                   function() {
+                       alert( "Guardado Correctamente" ); }
+                   }
+                    );
+            
+     </script> 
+             
+    <script>
+$.ajax ({ 
+url: 'localhost:3030/jugador',
+type: 'Get',
+beforeSend: function (response) {
+    console.log(response); 
+    response.forEach(function(jugador){
+        html="<tr class=''>"
+            +"<td>"
+                +jugador.id
+                +"</td>"
+                +"<td>"
+                +jugador.id_equipo
+                +"</td>"
+                +"<td>"
+                +jugador.posicion
+                +"</td>"
+                +"<td>"
+                +jugador.pierna_habil
+                +"</td>"
+                +"<td>"
+                +jugador.altura
+                +"</td>"
+                +"<td>"
+                +jugador.goles_hechos
+                +"</td>"
+                +"<td>"
+                +jugador.dorsal
+                +"</td>"
+                +"<td>"
+                +jugador.goles_recibidos
+                +"</td>"
+                +"<td>"
+                +jugador.penales_atajados
+                +"</td>"
+                +"<td>"
+                +jugador.promedio_gol_arq
+                +"</td>"
+                +"<td>"
+                +jugador.pronedio_gol_del
+                +"</td>"
+                +"<td>"
+                +jugador.penales_convertidos
+                +"</td>"
+                +"<td>"
+                +jugador.penales_errados
+                +"</td>"
+                +"<td>"
+                +jugador.nombre_completo
+                +"</td>"
+        
+    });
+} 
+})
+
+
+</script>
+
+</html>

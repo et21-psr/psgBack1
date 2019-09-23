@@ -1,0 +1,60 @@
+<html>
+
+    <script>
+$.ajax ({ 
+url: 'localhost:3030/partido',
+type: 'Get',
+beforeSend: function (response) {
+    console.log(response); 
+    response.forEach(function(partido){
+        html="<tr class=''>"
+            +"<td>"
+                +partido.id_parrido
+                +"</td>"
+                +"<td>"
+                +partido.local
+                +"</td>"
+                +"<td>"
+                +partido.visitante
+                +"</td>"
+                +"<td>"
+                +partido.faltas_realizadas
+                +"</td>"
+                +"<td>"
+                +partio.arbitro
+                +"</td>"
+                +"<td>"
+                +partido.tarjetas_amarillas
+                +"</td>"
+                +"<td>"
+                +partido.tarjetas_rojas
+                +"</td>"
+                +"<td>"
+                +partido.fecha
+                +"</td>"
+                +"<td>"
+                +partido.horarios
+                +"</td>"
+                +"<td>"
+                +partido.vot_local
+                +"</td>"
+                +"<td>"
+                +partido.vot_visitante
+                +"</td>"
+                +"<td>"
+                +partido.ganador
+                +"</td>"
+                +"<td>"
+                +partido.posicion
+                +"</td>"
+                +"<td>"
+            $("partido").append (html);
+        
+    });
+} 
+})
+
+
+</script>
+
+</html>

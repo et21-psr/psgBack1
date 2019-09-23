@@ -1,0 +1,82 @@
+html>
+    <script>
+$.ajax ({ 
+url: 'localhost:3030/usuario',
+type: 'Get',
+beforeSend: function (response) {
+    console.log(response); 
+    response.forEach(function(usuario){
+        html="<tr class=''>"
+                +"<td>"
+                +estadistica_equipo.id_html>
+    <script>
+$.ajax ({ 
+url: 'localhost:3030/estadistica_equipo',
+type: 'Get',
+beforeSend: function (response) {
+    console.log(response); 
+    response.forEach(function(estadistica_equipo){
+        html="<tr class=''>"
+                +"<td>"
+                +estadistica_partido.id_estadistica_equipo
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.id_equipo
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.goles_favor
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.goles_contra
+                +"</td>" 
+                +"<td>"
+                +estadistica_partido.partidos_ganados
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.partidos_perdidos
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.partidos_empatados
+                +"</td>"
+
+            });
+} 
+})
+
+
+
+
+</script>
+</html>
+                +"</td>"
+                +"<td>"
+                +estadistica_equipo.posesion
+                +"</td>"
+                +"<td>"
+                +estadistica_equipo.pases
+                +"</td>"
+                +"<td>"
+                +estadistica_equipo.precision_pases
+                +"</td>" 
+                +"<td>"
+                +estadistica_equipo.faltas
+                +"</td>"
+                +"<td>"
+                +estadistica_equipo.corners
+                +"</td>"
+                +"<td>"
+                +estadistica_equipo.offsides
+                +"</td>"
+                +"<td>"
+                +estadistica_equipo.remates
+                +"</td>"
+                               
+            });
+} 
+})
+
+
+
+
+</script>
+</html>

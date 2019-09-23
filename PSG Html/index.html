@@ -1,0 +1,54 @@
+<html>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <head>
+        <h1 align="center"><FONT FACE="times new roman" SIZE=6 COLOR="yellow">Formulario Equipos</h1></FONT>
+        <hr />
+        <br> </br>
+        </head>
+    <body background= "fondo.jpg">
+                <form id="formulario">
+                     
+                    <div>
+                        <p style="color:#FFED11";>
+                        <label for="director_tecnico">Director Tecnico:</label>
+                        <input type="text" id="director_tecnico" />
+                        
+                    </div>
+                    <br> </br>
+                    <div>
+                         <p style="color:#FFED11";>
+                        <label for="nombre">Nombre Equipo:</label>
+                        <input type="text" id="nombre" />
+                    </div>
+                    <br> </br> </p>
+                    <div class="button">
+                            <p style="color:#FFED11";>
+                        <button class="btn btn-success" type="submit">Guardar Datos</button>
+                    </p>
+                    </div>
+                
+                </form>
+    </body>
+</html>
+<script>
+        // Attach a submit handler to the form
+        $( "#formulario" ).submit(function( event ) {
+         console.log("Entro");
+          // Stop form from submitting normally
+          event.preventDefault();
+         
+          $.post( "http://localhost:3030/equipo", { 
+              director_tecnico: $("#director_tecnico").val(),
+               nombre: $("#nombre").val(),
+               function() {
+                   alert( "Guardado Correctamente" ); }
+               }
+                );
+        });
+
+        
+        
+ </script> 
+         

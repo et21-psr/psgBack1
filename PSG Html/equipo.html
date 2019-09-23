@@ -1,0 +1,23 @@
+<html>
+    <script>
+$.ajax ({ 
+url: 'localhost:3030/equipo',
+type: 'Get',
+beforeSend: function (response) {
+    console.log(response); 
+    response.forEach(function(equipo){
+        html="<tr class=''>"
+                +"<td>"
+                +equipo.id_equipo
+                +"</td>"
+                +"<td>"
+                +equipo.director_tecnico
+                +"</td>"
+                +"<td>"
+                +equipo.nombre
+                +"</td>"
+            });
+} 
+})
+</script>
+</html>

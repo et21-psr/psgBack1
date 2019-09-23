@@ -1,0 +1,69 @@
+<html>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <head>
+        <h1 align="center"><FONT FACE="times new roman" SIZE=6 COLOR="yellow">Formulario Equipos</h1></FONT>
+        <hr />
+        <br> </br>
+        </head>
+    <body background= "fondo2.jpg">
+                <form id="formulario">
+                    
+                    <p style="color:#FFED11";>
+                    <label for="id_estadpartido">id del partido:</label>
+                    <input type="int" id="id_estadpartido" />
+                    
+                </div>
+                <div>
+                    <p style="color:#FFED11";>
+                    <label for="posesion">posesion del balon :</label>
+                    <input type="int" id="goles_favor" />
+                    
+                </div>
+                <div>
+                    <p style="color:#FFED11";>
+                    <label for="pases">pases :</label>
+                    <input type="int" id="pases" />
+                    
+                </div>
+                <div>
+                    <p style="color:#FFED11";>
+                    <label for="precision_pases"> :</label>
+                    <input type="int" id="partidos_ganados" />
+                    
+                </div>
+                <div>
+                    <p style="color:#FFED11";>
+                    <label for="partidos_perdidos">partidos perdidos:</label>
+                    <input type="int" id="partidos_perdidos" />
+                    
+                </div>
+                <div>
+                    <p style="color:#FFED11";>
+                    <label for="partidos_empatados">partidos empatados :</label>
+                    <input type="int" id="partidos_empatados" />
+                    
+                </div>
+            </div>
+            <div class="button">
+                <p style="color:#FFED11";>
+            <button class="btn btn-success" type="submit">Guardar Datos</button>
+        </p>
+        </div>
+                </form>
+    </body>
+</html>
+<script>
+    // Attach a submit handler to the form
+    $( "#formulario" ).submit(function( event ) {
+     console.log("Entro");
+      // Stop form from submitting normally
+      event.preventDefault();
+     
+      $.post( "http://localhost:3030/estadisticaEquipo", { 
+          estadistica_equipo: $("#estadistica_equipo").val(),
+           function() {
+               alert( "Guardado Correctamente" ); }
+           }
+            );
+    });

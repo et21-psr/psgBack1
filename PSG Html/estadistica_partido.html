@@ -1,0 +1,50 @@
+<html>
+    <script>
+$.ajax ({ 
+url: 'localhost:3030/usuario',
+type: 'Get',
+beforeSend: function (response) {
+    console.log(response); 
+    response.forEach(function(usuario){
+        html="<tr class=''>"
+                +"<td>"
+                +estadistica_partido.id_estadpartido
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.posesion
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.pases
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.precision_pases
+                +"</td>" 
+                +"<td>"
+                +estadistica_partido.faltas
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.corners
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.offsides
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.remates
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.id_equipo
+                +"</td>"
+                +"<td>"
+                +estadistica_partido.id_partido
+                +"</td>"                                   
+
+
+            });
+} 
+})
+
+
+
+
+</script>
+</html>
